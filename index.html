@@ -1,0 +1,76 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Natureza - Agrinho</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="leaf-container"></div>
+
+  <div id="start-screen" class="start-screen">
+    <h1>🌿 Bem-vindo ao Jogo da Natureza 🌿</h1>
+    <p>Mostre que você sabe cuidar do nosso planeta!</p>
+
+    <div class="eco-info">
+      <h2>🌱 Curiosidades e Dicas Ecológicas</h2>
+      <ul>
+        <li>♻️ Uma garrafa PET pode levar até <strong>400 anos</strong> para se decompor.</li>
+        <li>💧 Feche a torneira ao escovar os dentes — você pode economizar até <strong>12 litros</strong> de água!</li>
+        <li>🌳 Plantar árvores ajuda a limpar o ar e combater o aquecimento global.</li>
+        <li>🛍️ Prefira sacolas reutilizáveis em vez das de plástico.</li>
+        <li>🌎 Cuidar da natureza é cuidar da nossa casa!</li>
+      </ul>
+    </div>
+
+    <button id="start-button">🌼 Jogar</button>
+  </div>
+
+  <main class="game-container hidden">
+    <h1>🌱 Jogo da Natureza</h1>
+    <p class="instruction">Ajude a mudinha a crescer! Responda corretamente às perguntas:</p>
+
+    <div class="question-box">
+      <div id="question-text">Carregando pergunta...</div>
+      <div id="answers"></div>
+    </div>
+
+    <div class="plant-stage">
+      <svg id="plant-svg" width="200" height="200" viewBox="0 0 200 200">
+        <g id="stage1">
+          <circle cx="100" cy="150" r="10" fill="#4caf50" />
+        </g>
+        <g id="stage2" style="display:none">
+          <circle cx="100" cy="150" r="10" fill="#4caf50" />
+          <line x1="100" y1="140" x2="100" y2="100" stroke="#388e3c" stroke-width="4" />
+        </g>
+        <g id="stage3" style="display:none">
+          <circle cx="100" cy="150" r="10" fill="#4caf50" />
+          <line x1="100" y1="140" x2="100" y2="100" stroke="#388e3c" stroke-width="4" />
+          <circle cx="90" cy="90" r="8" fill="#66bb6a" />
+          <circle cx="110" cy="90" r="8" fill="#66bb6a" />
+        </g>
+        <g id="stage4" style="display:none">
+          <circle cx="100" cy="150" r="10" fill="#4caf50" />
+          <line x1="100" y1="140" x2="100" y2="100" stroke="#388e3c" stroke-width="4" />
+          <circle cx="90" cy="90" r="8" fill="#66bb6a" />
+          <circle cx="110" cy="90" r="8" fill="#66bb6a" />
+          <circle cx="100" cy="70" r="5" fill="yellow" />
+        </g>
+      </svg>
+    </div>
+
+    <div id="final-message" class="hidden">
+      <h2>Parabéns! 🌳 Você ajudou a natureza a florescer!</h2>
+    </div>
+  </main>
+
+  <audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+  <audio id="wrong-sound" src="sounds/wrong.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
